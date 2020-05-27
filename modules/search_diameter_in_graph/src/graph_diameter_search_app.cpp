@@ -7,7 +7,7 @@
 #include <algorithm>
 #include "include/graph_diameter_search_app.h"
 
-int GraphApp::ParseValue(const std::string& data) {
+int GraphApp::parseValue(const std::string& data) {
  int number = 0;
  try {
         number = std::stoi(data);
@@ -26,11 +26,11 @@ std::string GraphApp::operator()(int argc, const char** argv) {
   int n;
   std::ostringstream stream;
   try {
-	  n = ParseValue(argv[1]);
+	  n = parseValue(argv[1]);
 	  Graph graph(n);
 	  int edges = argc - 2;
 	  for (int i = 2; i < edges; i++) {
-      graph.addEdge(ParseValue(argv[i]), ParseValue(argv[i+1]));
+      graph.addEdge(parseValue(argv[i]), parseValue(argv[i+1]));
 	  }
 	  stream << graph.diameterSearch();
     } 
@@ -59,7 +59,7 @@ bool GraphApp::validateNumberOfArguments(int argc, const char** argv) {
     help(argv[0]);
     return false;
   } 
-  if (argc > parseValue(argv[1])*(parseValue(argv[1])-1) + 2 || parseValue(argv[1]) <= 0 || (argc - 2)%2 != 0) {
+  else if(argc > parseValue(argv[1])*(parseValue(argv[1])-1) + 2 || parseValue(argv[1]) <= 0 || (argc - 2)%2 != 0) {
     help(argv[0], "Wrong number of arguments.\n\n");
     return false;
   }
