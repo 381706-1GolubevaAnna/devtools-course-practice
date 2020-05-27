@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <string>
-#include "include/graph_diameter_search.h"
+#include "include/graph_diameter_search_app.h"
 
 int main(int argc, const char** argv) {
   GraphApp app;
