@@ -54,7 +54,7 @@ TEST_F(GraphAppTest, Check_Number_Of_Arguments) {
 
 TEST_F(GraphAppTest, Can_Detect_Wrong_Operation_Format) {
   // Arrange
-  std::vector<std::string> args = {"2", "l", "2"};  ***********
+  std::vector<std::string> args = {"1", "+", "2"};
 
   // Act
   Act(args);
@@ -65,11 +65,11 @@ TEST_F(GraphAppTest, Can_Detect_Wrong_Operation_Format) {
 
 TEST_F(GraphAppTest, Can_Get_Diameter_Of_Graph) {
   // Arrange
-  std::vector<std::string> args = {};
+  std::vector<std::string> args = {"3", "1", "2", "2", "3"};
 
   // Act
   Act(args);
 
   // Assert
-  Assert("1");
+  Assert("2");
 }

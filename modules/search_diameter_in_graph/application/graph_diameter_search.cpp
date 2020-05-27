@@ -6,7 +6,8 @@
 
 int main(int argc, const char** argv) {
   GraphApp app;
-  std::cout << app(argc, argv) << std::endl;
+  std::string output = app(argc, argv);
+  std::cout << output << std::endl;
 
   return 0;
 }
