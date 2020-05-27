@@ -9,7 +9,7 @@
 
 class GraphApp {
  public:
-    GraphApp();
+    GraphApp()= default;;
     std::string operator()(int argc, const char** argv);
 
  private:
