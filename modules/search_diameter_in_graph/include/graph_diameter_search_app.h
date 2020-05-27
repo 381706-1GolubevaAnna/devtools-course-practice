@@ -1,7 +1,7 @@
 // Copyright 2020 Golubeva Anna
 
-#ifndef MODULES_SALARY_INCLUDE_GRAPH_DIAMETER_SEARCH_APP_H_
-#define MODULES_SALARY_INCLUDE_GRAPH_DIAMETER_SEARCH_APP_H_
+#ifndef MODULES_SEARCH_DIAMETER_IN_GRAPH_INCLUDE_GRAPH_DIAMETER_SEARCH_APP_H_
+#define MODULES_SEARCH_DIAMETER_IN_GRAPH_INCLUDE_GRAPH_DIAMETER_SEARCH_APP_H_
 
 #include <string>
 #include <iostream>
@@ -9,7 +9,7 @@
 
 class GraphApp {
  public:
-    GraphApp();
+    GraphApp() = default;
     std::string operator()(int argc, const char** argv);
 
  private:
@@ -20,4 +20,4 @@ class GraphApp {
 	Graph graph;
 };
 
-#endif  // MODULES_SALARY_INCLUDE_GRAPH_DIAMETER_SEARCH_APP_H_
+#endif  // MODULES_SEARCH_DIAMETER_IN_GRAPH_INCLUDE_GRAPH_DIAMETER_SEARCH_APP_H_
