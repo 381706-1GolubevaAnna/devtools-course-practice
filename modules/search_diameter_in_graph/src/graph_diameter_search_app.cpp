@@ -27,10 +27,10 @@ std::string GraphApp::operator()(int argc, const char** argv) {
   std::ostringstream stream;
   try {
 	  int n = ParseValue(argv[1]);
-	  Graph graph = graph(n);
+	  Graph graph(n);
 	  int edges = argc - 2;
 	  for (int i = 2; i < edges; i++) {
-      graph.addEdge(ParseValue(argv[i], ParseValue(argv[i+1]));
+      graph.addEdge(ParseValue(argv[i]), ParseValue(argv[i+1]));
 	  }
 	  stream << graph.diameterSearch();
     } 
