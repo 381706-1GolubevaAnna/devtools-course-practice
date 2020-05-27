@@ -7,7 +7,7 @@
 #include <algorithm>
 #include "include/graph_diameter_search_app.h"
 
-int GraphApp::ParseValue(const char* data) {
+int GraphApp::ParseValue(const std::string& data) {
  int number = 0;
  try {
         number = std::stoi(data);
