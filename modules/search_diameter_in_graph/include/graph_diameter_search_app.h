@@ -17,7 +17,7 @@ class GraphApp {
     bool validateNumberOfArguments(int argc, const char** argv);
 	int parseValue(const std::string& data);
 	std::string message_;
-	Graph graph;
+	Graph graph(int n);
 };
 
 #endif  // MODULES_SEARCH_DIAMETER_IN_GRAPH_INCLUDE_GRAPH_DIAMETER_SEARCH_APP_H_
