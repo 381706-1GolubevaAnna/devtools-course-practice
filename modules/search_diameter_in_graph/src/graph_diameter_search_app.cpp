@@ -20,13 +20,13 @@ int GraphApp::ParseValue(const char* data) {
 }
 
 std::string GraphApp::operator()(int argc, const char** argv) {
-  if (!validateNumOfArgs(argc, argv)) {
+  if (!validateNumberOfArguments(argc, argv)) {
     return message_;
     }
-  
+  int n;
   std::ostringstream stream;
   try {
-	  int n = ParseValue(argv[1]);
+	  n = ParseValue(argv[1]);
 	  Graph graph(n);
 	  int edges = argc - 2;
 	  for (int i = 2; i < edges; i++) {

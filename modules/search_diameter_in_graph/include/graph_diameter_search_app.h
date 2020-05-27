@@ -15,7 +15,6 @@ class GraphApp {
  private:
     void help(const char* appname, const char* message = "");
     bool validateNumberOfArguments(int argc, const char** argv);
-    int ParseValue(const char* data);
 	std::string message_;
 	Graph graph;
 };
