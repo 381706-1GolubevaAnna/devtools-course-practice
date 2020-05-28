@@ -25,14 +25,14 @@ std::string GraphApp::operator()(int argc, const char** argv) {
     }
   std::ostringstream stream;
   try {
-	  int n = parseValue(argv[1]);
-	  Graph graph(n);
-	  int edges = argc - 2;
-	  for (int i = 2; i < edges; i++) {
+      int n = parseValue(argv[1]);
+      Graph graph(n);
+      int edges = argc - 2;
+      for (int i = 2; i < edges; i++) {
       graph.addEdge(parseValue(argv[i]), parseValue(argv[i+1]));
-	  }
-	  stream << graph.diameterSearch();
-    } 
+      }
+      stream << graph.diameterSearch();
+    }
     catch(std::string& str) {
         return str;
     }
@@ -42,24 +42,24 @@ std::string GraphApp::operator()(int argc, const char** argv) {
 }
 
 void GraphApp::help(const char* appname, const char* message) {
-  message_=
-	  std::string(message) +
-	  "This is a graph diameter search application.\n\n"+
-	  "Please provide arguments in the following format:\n\n"+
-	  "  $ " + appname + " <number of vertices> " + "<first vertex of edge>" +
-	  "<second vertex of edge>" + "..." +"\n\n" +
-	  "Where <number of vertices> is a natural number\n" +
-	  "<first vertex of edge> <first vertex of edge>, ... are natural numbers "+
-	  "which set the edges of the graph\n.";
+  message_ =
+      std::string(message) +
+      "This is a graph diameter search application.\n\n"+
+      "Please provide arguments in the following format:\n\n"+
+      "  $ " + appname + " <number of vertices> " + "<first vertex of edge>" +
+      "<second vertex of edge>" + "..." +"\n\n" +
+      "Where <number of vertices> is a natural number\n" +
+      "<first vertex of edge> <first vertex of edge>, ... are natural numbers "+
+      "which set the edges of the graph\n.";
 }
 
 bool GraphApp::validateNumberOfArguments(int argc, const char** argv) {
   if (argc == 1) {
     help(argv[0]);
     return false;
-  } 
+  }
   int n = parseValue(argv[1]);
-  if(argc > n*(n - 1) + 2 || argc < 6) {
+  if (argc > n*(n - 1) + 2 || argc < 6) {
     help(argv[0], "Wrong arguments\n\n");
     return false;
   }
