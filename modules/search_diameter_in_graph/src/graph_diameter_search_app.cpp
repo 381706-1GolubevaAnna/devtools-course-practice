@@ -27,7 +27,7 @@ std::string GraphApp::operator()(int argc, const char** argv) {
   try {
       int n = parseValue(argv[1]);
       Graph graph(n);
-      int edges = argc - 2;
+      int edges = argc - 1;
       for (int i = 2; i < edges; i++) {
       graph.addEdge(parseValue(argv[i]), parseValue(argv[i+1]));
       }
@@ -59,7 +59,7 @@ bool GraphApp::validateNumberOfArguments(int argc, const char** argv) {
     return false;
   }
   int n = parseValue(argv[1]);
-  if (argc > n*(n - 1) + 2 || argc < 6) {
+  if (argc > n*(n - 1) + 2 || argc < 4) {
     help(argv[0], "Wrong arguments\n\n");
     return false;
   }
