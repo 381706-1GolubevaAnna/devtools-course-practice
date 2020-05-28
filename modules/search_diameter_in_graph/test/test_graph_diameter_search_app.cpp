@@ -49,19 +49,19 @@ TEST_F(GraphAppTest, Check_Number_Of_Arguments) {
   Act(args);
 
   // Assert
-  Assert("Wrong number of arguments");
+  Assert("Wrong arguments");
 }
 
-/*TEST_F(GraphAppTest, Can_Detect_Wrong_Operation_Format) {
+TEST_F(GraphAppTest, Can_Detect_Wrong_Operation_Format) {
   // Arrange
-  std::vector<std::string> args = {"3", "1", "2", "2", ","};
+  std::vector<std::string> args = {"+", "1", "2", "2", "3"};
 
   // Act
   Act(args);
 
   // Assert
   Assert("Wrong format");
-}*/
+}
 
 TEST_F(GraphAppTest, Can_Get_Diameter_Of_Graph) {
   // Arrange

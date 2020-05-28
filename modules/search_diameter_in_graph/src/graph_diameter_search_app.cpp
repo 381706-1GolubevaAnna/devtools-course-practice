@@ -13,7 +13,7 @@ int GraphApp::parseValue(const std::string& data) {
         value = std::stoi(data);
     }
     catch(...) {
-        throw std::string("Wrong format");
+        throw std::string("Wrong arguments");
     }
 
     return value;
@@ -60,7 +60,7 @@ bool GraphApp::validateNumberOfArguments(int argc, const char** argv) {
   } 
   int n = parseValue(argv[1]);
   if(argc > n*(n - 1) + 2 || argc < 6) {
-    help(argv[0], "Wrong number of arguments.\n\n");
+    help(argv[0], "Wrong arguments\n\n");
     return false;
   }
   return true;
