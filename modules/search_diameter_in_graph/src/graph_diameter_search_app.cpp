@@ -9,13 +9,14 @@
 
 int GraphApp::parseValue(const std::string& data) {
  int number = 0;
- try {
-        number = std::stoi(data);
+  for (auto& val : data) {
+    if ((!isdigit(val) || val == ',' || val == '.' || val == ' ' || val == '-')) {
+      help(argv[0],"Wrong format");
+      return -2;
     }
-    catch(...) {
-        throw std::string("Wrong format");
-    }
-	
+  }
+  number = std::stoi(data);
+
   return number;
 }
 
