@@ -54,7 +54,7 @@ TEST_F(GraphAppTest, Check_Number_Of_Arguments) {
 
 TEST_F(InterpolationSearchAppTest, Wrong_Format) {
   // Arrange
-  std::vector<std::string> args = {"+", "l", "2", "2", "3"};
+  std::vector<std::string> args = {"+"};
 
   // Act
   Act(args);
