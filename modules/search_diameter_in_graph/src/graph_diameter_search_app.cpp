@@ -12,7 +12,6 @@ int GraphApp::parseValue(const std::string& data) {
   for (auto& val : data) {
     if ((!isdigit(val) || val == ',' || val == '.' || val == ' ' || val == '-')) {
       throw std::string("Wrong format");
-      return -2;
     }
   }
   number = std::stoi(data);
