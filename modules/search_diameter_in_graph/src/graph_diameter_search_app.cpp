@@ -59,7 +59,7 @@ bool GraphApp::validateNumberOfArguments(int argc, const char** argv) {
     help(argv[0]);
     return false;
   } 
-  else if(argc > parseValue(argv[1])*(parseValue(argv[1])-1) + 2 || parseValue(argv[1]) <= 0 || (argc - 2)%2 != 0) {
+  else if(argc > parseValue(argv[1])*(parseValue(argv[1])-1) + 2 || argc < 4 || (argc - 2)%2 != 0) {
     help(argv[0], "Wrong number of arguments.\n\n");
     return false;
   }

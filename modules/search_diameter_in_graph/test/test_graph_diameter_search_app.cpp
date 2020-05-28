@@ -54,7 +54,7 @@ TEST_F(GraphAppTest, Check_Number_Of_Arguments) {
 
 TEST_F(GraphAppTest, Can_Detect_Wrong_Operation_Format) {
   // Arrange
-  std::vector<std::string> args = {"1", "+", "2"};
+  std::vector<std::string> args = {"1", "+", "2" , "a"};
 
   // Act
   Act(args);
