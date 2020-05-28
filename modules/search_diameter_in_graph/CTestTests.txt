@@ -32,7 +32,7 @@ set_tests_properties (${prefix}_check_Number_Of_Arguments PROPERTIES
 
 add_test(
     NAME ${prefix}_can_Detect_Wrong_Operation_Format
-    COMMAND ${APPLICATION} 1 + 2
+    COMMAND ${APPLICATION} ,
 )
 
 set_tests_properties (${prefix}_can_Detect_Wrong_Operation_Format PROPERTIES
