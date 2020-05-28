@@ -8,15 +8,15 @@
 #include "include/graph_diameter_search_app.h"
 
 int GraphApp::parseValue(const std::string& data) {
- int number = 0;
-  for (auto& val : data) {
-    if ((!isdigit(val) || val == ',' || val == '.' || val == ' ' || val == '-')) {
-      throw std::string("Wrong format");
+  int value;
+    try {
+        value = std::stoi(data);
     }
-  }
-  number = std::stoi(data);
+    catch(...) {
+        throw std::string("Wrong format");
+    }
 
-  return number;
+    return value;
 }
 
 std::string GraphApp::operator()(int argc, const char** argv) {
@@ -59,7 +59,8 @@ bool GraphApp::validateNumberOfArguments(int argc, const char** argv) {
     help(argv[0]);
     return false;
   } 
-  else if(argc > parseValue(argv[1])*(parseValue(argv[1])-1) + 2 || argc < 4 || (argc - 2)%2 != 0) {
+  int n = parseValue(argv[1]);
+  else if(argc > n*(n - 1) + 2 || argc < 4 || (argc - 2)%2 != 0) {
     help(argv[0], "Wrong number of arguments.\n\n");
     return false;
   }
