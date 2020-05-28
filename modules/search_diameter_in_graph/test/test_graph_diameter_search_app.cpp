@@ -60,7 +60,7 @@ TEST_F(GraphAppTest, Can_Detect_Wrong_Operation_Format) {
   Act(args);
 
   // Assert
-  Assert("Wrong format");
+  Assert("Wrong arguments");
 }
 
 TEST_F(GraphAppTest, Can_Get_Diameter_Of_Graph) {
