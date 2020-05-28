@@ -31,6 +31,15 @@ set_tests_properties (${prefix}_check_Number_Of_Arguments PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
+    NAME ${prefix}_wrong_Arguments
+    COMMAND ${APPLICATION} + 1 2 2 3
+)
+
+set_tests_properties (${prefix}_check_Number_Of_Arguments PROPERTIES
+    PASS_REGULAR_EXPRESSION "Wrong arguments"
+    LABELS "${MODULE}")
+
+add_test(
     NAME ${prefix}_can_Get_Diameter_Of_Graph
     COMMAND ${APPLICATION} 3 1 2 2 3
 )

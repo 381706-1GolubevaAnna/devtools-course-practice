@@ -52,6 +52,17 @@ TEST_F(GraphAppTest, Check_Number_Of_Arguments) {
   Assert("Wrong arguments");
 }
 
+TEST_F(InterpolationSearchAppTest, Wrong_Format) {
+  // Arrange
+  std::vector<std::string> args = {"+", "l", "2", "2", "3"};
+
+  // Act
+  Act(args);
+
+  // Assert
+  Assert("Wrong arguments");
+}
+
 TEST_F(GraphAppTest, Can_Get_Diameter_Of_Graph) {
   // Arrange
   std::vector<std::string> args = {"3", "1", "2", "2", "3"};
