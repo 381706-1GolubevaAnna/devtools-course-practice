@@ -23,10 +23,9 @@ std::string GraphApp::operator()(int argc, const char** argv) {
   if (!validateNumberOfArguments(argc, argv)) {
     return message_;
     }
-  int n;
   std::ostringstream stream;
   try {
-	  n = parseValue(argv[1]);
+	  int n = parseValue(argv[1]);
 	  Graph graph(n);
 	  int edges = argc - 2;
 	  for (int i = 2; i < edges; i++) {
@@ -60,7 +59,7 @@ bool GraphApp::validateNumberOfArguments(int argc, const char** argv) {
     return false;
   } 
   int n = parseValue(argv[1]);
-  if(argc > n*(n - 1) + 2 || argc < 6 || (argc - 2)%2 != 0) {
+  if(argc > n*(n - 1) + 2 || argc < 6) {
     help(argv[0], "Wrong number of arguments.\n\n");
     return false;
   }
